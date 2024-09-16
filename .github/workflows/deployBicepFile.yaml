@@ -18,6 +18,6 @@ jobs:
       with:
         scope: subscription
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        template: ./resources.bicep
+        template: ./main.bicep
         deploymentMode: Complete
         region: germanywestcentral

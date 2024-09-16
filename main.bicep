@@ -1,6 +1,10 @@
 targetScope='subscription'
 
+//-------RG-------//
+
 resource newRG 'Microsoft.Resources/resourceGroups@2024-03-01' = {
-  name: 'spuceBitesWebsite'
+  name: 'rg-spuce-bites-website'
   location: 'germanywestcentral'
 }
+
+//-------VM-------//

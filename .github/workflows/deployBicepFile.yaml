@@ -4,6 +4,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+    
+    - checkout: self
 
     - name: Checkout code
       uses: actions/checkout@main

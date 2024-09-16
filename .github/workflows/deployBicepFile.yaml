@@ -8,10 +8,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@main
 
-    - name: Test
-      run: |
-         ls -la;
-
     - name: Log into Azure
       uses: azure/login@v1
       with:

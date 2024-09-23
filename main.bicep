@@ -9,49 +9,25 @@ resource newRG 'Microsoft.Resources/resourceGroups@2024-03-01' = {
 
 //-------VM-------//
 
-@description('The name of your Virtual Machine.')
 param vmName string = 'vm-spuce-bites-website'
-
-@description('Username for the Virtual Machine.')
 param adminUsername string
-
-@description('Type of authentication to use on the Virtual Machine. SSH key is recommended.')
+param adminPasswordOrKey string
 @allowed([
   'sshPublicKey'
   'password'
 ])
 param authenticationType string = 'password'
-
-@description('SSH Key or password for the Virtual Machine. SSH key is recommended.')
-@secure()
-param adminPasswordOrKey string
-
-@description('Unique DNS Name for the Public IP used to access the Virtual Machine.')
-param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().id)}')
-
-@description('The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version.')
+param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(newRG.id)}')
 @allowed([
   'Ubuntu-2004'
   'Ubuntu-2204'
 ])
 param ubuntuOSVersion string = 'Ubuntu-2004'
-
-@description('Location for all resources.')
-param location string = resourceGroup().location
-
-@description('The size of the VM')
+param location string = newRG.location
 param vmSize string = 'Standard_B2pts_v2'
-
-@description('Name of the VNET')
 param virtualNetworkName string = 'vNet'
-
-@description('Name of the subnet in the virtual network')
 param subnetName string = 'Subnet'
-
-@description('Name of the Network Security Group')
 param networkSecurityGroupName string = 'SecGroupNet'
-
-@description('Security Type of the Virtual Machine.')
 @allowed([
   'Standard'
   'TrustedLaunch'

@@ -40,7 +40,7 @@ param ubuntuOSVersion string = 'Ubuntu-2004'
 param location string = resourceGroup().location
 
 @description('The size of the VM')
-param vmSize string = 'Standard_D2s_v3'
+param vmSize string = 'Standard_B2pts_v2'
 
 @description('Name of the VNET')
 param virtualNetworkName string = 'vNet'

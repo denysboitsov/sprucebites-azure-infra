@@ -11,6 +11,7 @@ resource newRG 'Microsoft.Resources/resourceGroups@2024-03-01' = {
 
 param vmName string = 'vm-spuce-bites-website'
 param adminUsername string
+@secure()
 param adminPasswordOrKey string
 @allowed([
   'sshPublicKey'

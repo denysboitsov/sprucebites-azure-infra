@@ -27,7 +27,7 @@ jobs:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         template: ./rg.bicep
         deploymentMode: Complete
-        region: germanywestcentral
+        region: centralus
 
     - name: Deploy VM
       uses: azure/arm-deploy@v2

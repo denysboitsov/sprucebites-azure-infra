@@ -7,7 +7,7 @@ param adminPasswordOrKey string
   'password'
 ])
 param authenticationType string = 'password'
-param dnsLabelPrefix string = toLower('${vmName}-${resourceId('Microsoft.Resources/resourceGroups', 'newRG')}')
+param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().id)}')
 @allowed([
   'Ubuntu-2004'
   'Ubuntu-2204'

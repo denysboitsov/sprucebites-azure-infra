@@ -20,12 +20,19 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Deploy Bicep file
+    - name: Deploy RG
       uses: azure/arm-deploy@v2
       with:
         scope: subscription
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        template: ./main.bicep
+        template: ./rg.bicep
         deploymentMode: Complete
         region: germanywestcentral
+
+    - name: Deploy VM
+      uses: azure/arm-deploy@v2
+      with:
+        resourceGroupName: rg-spuce-bites-website
+        template: ./vm.bicep
+        deploymentMode: Complete
         parameters: adminUsername=${{ secrets.ADMIN_USERNAME }} adminPasswordOrKey=${{ secrets.ADMIN_PASSWORD_OR_KEY }}

@@ -28,4 +28,4 @@ jobs:
         template: ./main.bicep
         deploymentMode: Complete
         region: germanywestcentral
-        parameters: adminUsername=${{ secrets.adminUsername }} adminPasswordOrKey=${{ secrets.adminPasswordOrKey }}
+        parameters: adminUsername=${{ secrets.ADMIN_USERNAME }} adminPasswordOrKey=${{ secrets.ADMIN_PASSWORD_OR_KEY }}

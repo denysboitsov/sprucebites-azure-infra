@@ -24,7 +24,7 @@ param dnsLabelPrefix string = toLower('${vmName}-${resourceId('Microsoft.Resourc
   'Ubuntu-2204'
 ])
 param ubuntuOSVersion string = 'Ubuntu-2004'
-param location string = resourceLocation('Microsoft.Resources/resourceGroups', 'newRG')
+param location string = 'germanywestcentral'
 param vmSize string = 'Standard_B2pts_v2'
 param virtualNetworkName string = 'vNet'
 param subnetName string = 'Subnet'

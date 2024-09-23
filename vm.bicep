@@ -14,7 +14,7 @@ param dnsLabelPrefix string = toLower('${vmName}-${resourceId('Microsoft.Resourc
 ])
 param ubuntuOSVersion string = 'Ubuntu-2004'
 param location string = 'centralus'
-param vmSize string = 'Standard_B2pts_v2'
+param vmSize string = 'Standard_B1s'
 param virtualNetworkName string = 'vNet'
 param subnetName string = 'Subnet'
 param networkSecurityGroupName string = 'SecGroupNet'
